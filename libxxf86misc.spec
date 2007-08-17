@@ -1,4 +1,12 @@
-%define libxxf86misc %mklibname xxf86misc 1
+%define name	libxxf86misc
+%define version	1.0.1
+%define release	%mkrel 3
+
+%define major		1
+%define libname		%mklibname xxf86misc %{major}
+%define develname	%mklibname xxf86misc -d
+%define staticname	%mklibname xxf86misc -d -s
+
 Name: libxxf86misc
 Summary:  XFree86 Misc Extension Library
 Version: 1.0.1
@@ -15,55 +23,56 @@ BuildRequires: x11-proto-devel >= 1.0.0
 BuildRequires: x11-util-macros >= 1.0.1
 
 %description
-XFree86 Misc Extension Library
+XFree86 Misc Extension Library.
 
 #-----------------------------------------------------------
 
-%package -n %{libxxf86misc}
+%package -n %{libname}
 Summary:  XFree86 Misc Extension Library
 Group: Development/X11
 Conflicts: libxorg-x11 < 7.0
 Provides: %{name} = %{version}
 
-%description -n %{libxxf86misc}
-XFree86 Misc Extension Library
+%description -n %{libname}
+XFree86 Misc Extension Library.
 
 #-----------------------------------------------------------
 
-%package -n %{libxxf86misc}-devel
+%package -n %{develname}
 Summary: Development files for %{name}
 Group: Development/X11
 
-Requires: %{libxxf86misc} >= %{version}
+Requires: %{libname} >= %{version}
 Requires: x11-proto-devel >= 1.0.0
-Provides: libxxf86misc-devel = %{version}-%{release}
+Provides: %{name}-devel = %{version}-%{release}
+Obsoletes: %{mklibname xxf86misc 1 -d}
 
 Conflicts: libxorg-x11-devel < 7.0
 
-%description -n %{libxxf86misc}-devel
+%description -n %{develname}
 Development files for %{name}
 
-%files -n %{libxxf86misc}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/libXxf86misc.so
 %{_libdir}/libXxf86misc.la
 %{_libdir}/pkgconfig/xxf86misc.pc
-%{_mandir}/man3/XF86Misc*.3x.bz2
+%{_mandir}/man3/XF86Misc*.3*
 
 #-----------------------------------------------------------
 
-%package -n %{libxxf86misc}-static-devel
+%package -n %{staticname}
 Summary: Static development files for %{name}
 Group: Development/X11
-Requires: %{libxxf86misc}-devel = %{version}
-Provides: libxxf86misc-static-devel = %{version}-%{release}
+Requires: %{develname} = %{version}
+Provides: %{name}-static-devel = %{version}-%{release}
 
 Conflicts: libxorg-x11-static-devel < 7.0
 
-%description -n %{libxxf86misc}-static-devel
+%description -n %{staticname}
 Static development files for %{name}
 
-%files -n %{libxxf86misc}-static-devel
+%files -n %{staticname}
 %defattr(-,root,root)
 %{_libdir}/libXxf86misc.a
 
@@ -85,12 +94,10 @@ rm -rf %{buildroot}
 %clean
 rm -rf %{buildroot}
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post -n %{libname} -p /sbin/ldconfig
+%postun -n %{libname} -p /sbin/ldconfig
 
-%files -n %{libxxf86misc}
+%files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/libXxf86misc.so.1
-%{_libdir}/libXxf86misc.so.1.1.0
-
+%{_libdir}/libXxf86misc.so.%{major}*
 
