@@ -1,6 +1,6 @@
 %define name	libxxf86misc
 %define version	1.0.1
-%define release	%mkrel 3
+%define release	%mkrel 4
 
 %define major		1
 %define libname		%mklibname xxf86misc %{major}
@@ -66,6 +66,7 @@ Summary: Static development files for %{name}
 Group: Development/X11
 Requires: %{develname} = %{version}
 Provides: %{name}-static-devel = %{version}-%{release}
+Obsoletes: %{mklibname xxf86misc 1 -d -s}
 
 Conflicts: libxorg-x11-static-devel < 7.0
 
