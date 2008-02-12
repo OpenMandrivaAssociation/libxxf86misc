@@ -1,22 +1,26 @@
+%define name		libxxf86misc
+%define version		1.0.1
+%define release		%mkrel 5
+
 %define major		1
 %define libname		%mklibname xxf86misc %{major}
 %define develname	%mklibname xxf86misc -d
 %define staticname	%mklibname xxf86misc -d -s
 
-Name:		libxxf86misc
+Name:		%{name}
 Summary:	XFree86 Misc Extension Library
-Version:	1.0.1
-Release:	%mkrel 5
+Version:	%{version}
+Release:	%{release}
 Group:		Development/X11
 License:	MIT
 URL:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXxf86misc-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-root
 
-BuildRequires:	x11-util-macros		>= 1.1.5
-BuildRequires:	libx11-devel		>= 1.1.3
-BuildRequires:	x11-proto-devel		>= 7.3
-BuildRequires:	libxext-devel		>= 1.0.3
+BuildRequires: libx11-devel >= 1.0.0
+BuildRequires: libxext-devel >= 1.0.0
+BuildRequires: x11-proto-devel >= 1.0.0
+BuildRequires: x11-util-macros >= 1.0.1
 
 %description
 XFree86 Misc Extension Library.
