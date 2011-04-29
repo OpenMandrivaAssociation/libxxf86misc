@@ -1,6 +1,6 @@
 %define name		libxxf86misc
 %define version		1.0.3
-%define release		%mkrel 1
+%define release		%mkrel 2
 
 %define major		1
 %define libname		%mklibname xxf86misc %{major}
