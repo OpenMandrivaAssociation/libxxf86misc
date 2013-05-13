@@ -1,6 +1,6 @@
 %define name		libxxf86misc
 %define version		1.0.3
-%define release		4
+%define release 		5
 
 %define major		1
 %define libname		%mklibname xxf86misc %{major}
@@ -15,7 +15,6 @@ Group:		Development/X11
 License:	MIT
 URL:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXxf86misc-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-root
 
 BuildRequires: pkgconfig(x11) >= 1.0.0
 BuildRequires: pkgconfig(xext) >= 1.0.0
