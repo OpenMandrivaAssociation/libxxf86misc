@@ -5,7 +5,7 @@
 Summary:	XFree86 Misc Extension Library
 Name:		libxxf86misc
 Version:	1.0.3
-Release:	15
+Release:	16
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
