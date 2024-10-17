@@ -8,7 +8,7 @@ Version:	1.0.4
 Release:	3
 Group:		Development/X11
 License:	MIT
-Url:		http://xorg.freedesktop.org
+Url:		https://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXxf86misc-%{version}.tar.bz2
 
 BuildRequires:	pkgconfig(x11) >= 1.0.0
