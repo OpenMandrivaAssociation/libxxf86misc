@@ -11,6 +11,11 @@ License:	MIT
 Url:		https://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXxf86misc-%{version}.tar.bz2
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(x11) >= 1.0.0
 BuildRequires:	pkgconfig(xext) >= 1.0.0
 BuildRequires:	pkgconfig(xproto) >= 1.0.0
